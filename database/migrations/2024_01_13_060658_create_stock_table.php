@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('stock', function (Blueprint $table) {
-            $table->uuid();
+            $table->uuid('id')->primary();
             $table->decimal('qty', 8, 2);
             $table->foreignUuid('product_id')->constrained('product', 'id');
             $table->timestamps();
