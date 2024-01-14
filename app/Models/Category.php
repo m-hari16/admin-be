@@ -28,4 +28,8 @@ class Category extends Model
         return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('Y-m-d H:i:s');
     }
 
+    public function hasProduct() {
+        return $this->hasMany(Product::class, 'category_id');
+    }
+
 }

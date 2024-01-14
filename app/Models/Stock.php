@@ -11,6 +11,8 @@ class Stock extends Model
 {
     use HasFactory, HasUuids, SoftDeletes;
 
+    protected $table = 'stock';
+
     protected $fillable = [
         'qty',
         'product_id'
