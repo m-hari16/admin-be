@@ -9,6 +9,7 @@ use Illuminate\Auth\AuthenticationException;
 use Illuminate\Validation\ValidationException;
 use App\Common\BaseResponse\ResponseBuilder;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\UnauthorizedException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 class Handler extends ExceptionHandler
@@ -65,6 +66,14 @@ class Handler extends ExceptionHandler
                     401, 
                     false, 
                     "Unauthorized"),
+                401);
+            }
+
+            if ( $exception instanceof UnauthorizedException ) {
+                return response()->json(ResponseBuilder::build(
+                    403, 
+                    false, 
+                    "Forbidden access"),
                 401);
             }
 
