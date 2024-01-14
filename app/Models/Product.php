@@ -40,4 +40,8 @@ class Product extends Model
     public function hasStock() {
         return $this->hasOne(Stock::class, 'product_id');
     }
+
+    public function hasPurchase() {
+        return $this->hasMany(Purchase::class, 'product_id');
+    }
 }
