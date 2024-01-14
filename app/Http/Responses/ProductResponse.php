@@ -21,12 +21,13 @@ class ProductResponse extends JsonResource
 
         return [
             'id' => $this->id,
+            'product_code' => $this->code,
             'product_name' => $this->name,
             'specification' => json_decode($this->specification),
             'uom' => $this->uom,
             'isActive' => $this->isActive,            
             'category' => $category,
-            'stock' => $this->hasStock->qty ?? 0,
+            'stock' => (float)$this->hasStock->qty ?? 0,
             'created_at' => $this->created_at,
         ];
     }

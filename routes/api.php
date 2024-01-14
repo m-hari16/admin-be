@@ -43,13 +43,11 @@ Route::prefix('admin')->group(function() {
         Route::get('/product/{id}', 'Product\ProductController@show');
         Route::put('/product/{id}', 'Product\ProductController@update');
         Route::delete('/product/{id}', 'Product\ProductController@delete');
-    
-        Route::post('/stock', 'Product\StockController@create');
+        
         Route::get('/stock', 'Product\StockController@index');
         Route::get('/stock/{id}', 'Product\StockController@show');
-        Route::put('/stock/{id}', 'StockController@update');
-        Route::delete('/stock/{id}', 'Product\StockController@delete');
-    
+        Route::put('/stock/{id}', 'Product\StockController@update');
+        
         Route::post('/purchase', 'Product\PurchaseController@create');
         Route::get('/purchase', 'Product\PurchaseController@index');
         Route::get('/purchase/{id}', 'Product\PurchaseController@show');
