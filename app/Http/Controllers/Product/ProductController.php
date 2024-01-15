@@ -69,7 +69,7 @@ class ProductController extends Controller
   {
     $payload = [
       'name' => $newData->name,
-      'specification' => $newData->specification,
+      'specification' => isset($newData->specification) ? json_encode($newData->specification) : json_encode([]),
       'uom' => $newData->uom,
       'isActive' => $newData->isActive,
       'category_id' => $newData->category_id,
