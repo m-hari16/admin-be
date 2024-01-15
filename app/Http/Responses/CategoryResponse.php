@@ -16,7 +16,7 @@ class CategoryResponse extends JsonResource
     {
         return [
             'id' => $this->id,
-            'role_name' => $this->name,
+            'name' => $this->name,
             'created_at' => $this->created_at,
         ];
     }

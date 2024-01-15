@@ -26,7 +26,6 @@ class ProductRequest extends FormRequest
         return [
             'code' => 'required|string|unique:product,code',
             'name' => 'required|string',
-            'specification' => 'required',
             'uom' => 'required|string',
             'isActive' => 'required|boolean',
             'category_id' => 'required|string',

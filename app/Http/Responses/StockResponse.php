@@ -23,7 +23,7 @@ class StockResponse extends JsonResource
 
         return [
             'id' => $this->id,
-            'stock' => (float)$this->qty,
+            'stock' => $this->qty,
             'product' => $product,
             'created_at' => $this->created_at,
         ];

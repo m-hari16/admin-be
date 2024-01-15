@@ -16,7 +16,7 @@ class ProductResponse extends JsonResource
     {
         $category = [
             'id' => $this->hasCategory->id,
-            'role_name' => $this->hasCategory->name
+            'name' => $this->hasCategory->name
         ];
 
         return [
@@ -27,7 +27,7 @@ class ProductResponse extends JsonResource
             'uom' => $this->uom,
             'isActive' => $this->isActive,            
             'category' => $category,
-            'stock' => (float)$this->hasStock->qty ?? 0,
+            'stock' => $this->hasStock->qty ?? 0,
             'created_at' => $this->created_at,
         ];
     }

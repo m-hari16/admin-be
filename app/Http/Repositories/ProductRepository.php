@@ -14,7 +14,7 @@ class ProductRepository
     $product = $category->hasProduct()->create([
       'code' => $data['code'],
       'name' => $data['name'],
-      'specification' => json_encode($data['specification']),
+      'specification' => isset($data['specification']) ? json_encode($data['specification']) : json_encode([]),
       'uom' => $data['uom'],
       'isActive' => $data['isActive'],
     ]);

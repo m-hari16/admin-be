@@ -25,7 +25,6 @@ class ProductUpdateRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'specification' => 'required',
             'uom' => 'required|string',
             'isActive' => 'required|boolean',
             'category_id' => 'required|string',
